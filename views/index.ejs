@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./javascripts/angular/root.js"></script>
+  </head>
+  <body ng-controller="ToDoController">
+    <h1>Simple Angular + AJAX ToDo App</h1>
+    <form>
+      <input type="text" name="body" ng-model="formData.body">
+      <button type="submit" ng-click="createTodo()">Add ToDo</button>
+    </form>
+    
+    <h2>Things Left To Do: {{todos.length}}</h2>
+    
+    <div id="display" ng-repeat="todo in todos">
+      <label>
+        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{todo.body}}
+      </label>
+    </div>
+    
+    
+  </body>
+</html>
